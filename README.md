@@ -6,7 +6,9 @@ The onboarding is welcome to all new members at CWRU and of all skill levels. Th
 
 There will be a GitHub template in this repository that you can clone on your computer and work on. More information about that below. This repository will contain some resources that could be helpful for you in finishing this project. You don't need to finish or read through all of them as some of them contain material beyond our scope.
 
-You are also free to ask questions about onboarding such as help with the project or questions in the #onboarding-channel or you can just research this your own. This is a common beginner project and thus is heavily documented, so you can easily find information about it online.
+You are also free to ask questions about onboarding such as help with the project or questions in the #onboarding-channel or you can just research this your own. This is a common beginner project and thus is heavily documented, so you can easily find information about it online. 
+
+---
 
 # Overview
 
@@ -16,8 +18,20 @@ Before designing a chip, it is good practice to know what our outputs are going 
 
 In our case, our design specifications will be:
 
-**Single-cycle: the processor only performs one instruction per cycle
-Instructions: The instructions will come from the RV32I (RISC-V 32 bit integer). This will be the Instruction Set Architecture (ISA) that we'll be using.
-Data: The data in this context will be the limit we'll supply before the counter resets back to 0.**
-#
+**Single-cycle: the processor only performs one instruction per cycle**<br>
+**Instructions: The instructions will come from the RV32I (RISC-V 32 bit integer). This will be the Instruction Set Architecture (ISA) that we'll be using.**<br>
+**Data: The data in this context will be the limit we'll supply before the counter resets back to 0.**<br>
+
+---
+
+# Setup
+
+You'll need to install the following software and tools on your computer for this project. Installation guides will be provided for Windows / MacOS. If you're on Linux you can install the respective packages through the terminal easily:
+
+**VSCode: code-editor**<br>
+**Verilator: Verilog/SystemVerilog compiler**<br>
+**Git: version control + cloning the template**<br>
+
+
+
 
