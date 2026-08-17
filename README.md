@@ -1,6 +1,6 @@
 # ASICWRU Onboarding
 
-This repository contains all of the information that we'll use for ASICWRU's onboarding project. We'll have new members write a **single-cycle R32VI processor** in SystemVerilog. By the completion of this project, the design should be able to execute a one digit counter that starts from 0 and goes up to 9, and then goes back to 0 using the RISC-V assembly instructions.
+This repository contains all of the information that we'll use for ASICWRU's onboarding project. We'll have new members build a **single-cycle R32VI processor** in SystemVerilog. By the completion of this project, the processor should be able to execute a one digit counter that starts from 0 and goes up to 9, and then goes back to 0.
 
 The onboarding is welcome to all new members at CWRU and of all skill levels. This onboarding project may be challenging for beginners, but successfully finishing this project will be rewarding as it teaches you a lot of core concepts in digital design, design verification/emulation, and computer architecture. It will also give you a feel if this is something that you'd be interested in for a hobby or a career. If you've taken ECSE 281 or ECSE 301, this is a good step up and application of the knowledge you've accumulated from these classes. For the club's purpose, it will also help us become prepared for projects that are way more complex, and of course, resume-worthy.
 
@@ -10,7 +10,7 @@ You are also free to ask questions about onboarding such as help with the projec
 
 ---
 
-# Overview
+# Project Overview
 
 A **processor** is a digital circuit that is capable of performing a specific task(s) by repeatedly receiving data and performing operations on them. There are different types of processors such as the CPU (Central Processing Unit) which is meant for general purpose and sequential tasks. Then, the GPU (Graphics Processing Unit) which is meant for rendering images, videos, and 3D models by being able to execute a lot of the same instructions in parallel. TPU (Tensor Processing Unit) which is used to accelerate tensor and matrix operations dedicated for machine learning. All of these processors have different architectures but fundamentally they all take data and instructions, then perform whatever those instructions they need to do onto that data, then return the results.
 
@@ -26,11 +26,17 @@ In our case, our design specifications will be:
 
 # Setup
 
-You'll need to install the following software and tools on your computer for this project. Installation guides will be provided for Windows / MacOS. If you're on Linux you can install the respective packages through the terminal easily:
+You'll need to install the following software and tools on your computer for this project. If you use Linux, all of these can just be installed directly through your terminal
 
-**VSCode: code-editor**<br>
-**Verilator: Verilog/SystemVerilog compiler**<br>
-**Git: version control + cloning the template**<br>
+1. VSCode - By itself, it is just a code editor that's why you'll need to install an extension that supports Verilog/SystemVerilog syntax.
+2. Git - Used for version control and cloning repos
+3. Verilator - Compiler for Verilog/SystemVerilog
+4. GTKWave - Used for viewing waveforms
+
+For Windows systems, you'll need to install Windows Subsystem for Linux (WSL). This makes the installation much simpler.
+
+
+**
 
 
 
