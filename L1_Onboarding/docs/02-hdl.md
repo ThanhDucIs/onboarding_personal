@@ -1,5 +1,7 @@
 # Introduction to Hardware Description Language (HDL)
 
+---
+
 ### What is a hardware description language?
 
 A **hardware description language (HDL)** is a special type of programming language created specifically for describing and simulating the structure and behavior of digital logic circuits. Popular HDLs include Verilog, SystemVerilog, and VHDL.
@@ -8,6 +10,8 @@ On the other hand, C code executes the code sequentially.
 
 
 SystemVerilog is an extension of Verilog with extra features such as more data types (e.g logic, struct, and enum) and advanced verification features. Syntax-wise, they're still the same so you shouldn't worry about missing out on it while learning Verilog.
+
+--- 
 
 ### How do I learn Verilog?
 
@@ -28,6 +32,10 @@ You can access all the problems from [here](https://hdlbits.01xz.net/wiki/Proble
 | 8 |  |  |
 | 9 |  | |
 | 10 |  | |
+
+---
+
+### Testbenches
 
 
 
