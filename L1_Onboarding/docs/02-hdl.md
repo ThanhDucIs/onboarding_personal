@@ -1,7 +1,5 @@
 # Introduction to Hardware Description Language (HDL)
 
----
-
 ### What is a hardware description language?
 
 A **hardware description language (HDL)** is a special type of programming language created specifically for describing and simulating the structure and behavior of digital logic circuits. Popular HDLs include Verilog, SystemVerilog, and VHDL.
