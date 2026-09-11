@@ -8,9 +8,10 @@ and basic digital design and computer architecture concepts.
 
 ---
 
-# Project 2: UART Transmitter/Controller
+# Project 2: UART Transmitter
 
 ---
 
 # Project 3: Synchronous FIFO 
 
+---
