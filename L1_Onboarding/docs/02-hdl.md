@@ -18,18 +18,23 @@ We've highlighted some of the exercises that are going to be relevant for the on
 
 You can access all the problems from [here](https://hdlbits.01xz.net/wiki/Problem_sets).
 
-| # | Exercise | Topic|
+| # | Topic | Problem(s) |
 | --- | --- | --- |
-| 1 | [Getting Started](https://hdlbits.01xz.net/wiki/Step_one) |  Assigning an input to an output |
-| 2 |  | |
-| 3 |  | |
-| 4 | | |
-| 5 |  | |
-| 6 |  | |
-| 7 |  |  |
-| 8 |  |  |
-| 9 |  | |
-| 10 |  | |
+| 1 | Getting Started |  Getting Started, Output Zero |
+| 2 |  Basics | Simple wire, Four wires, Inverter, AND Gate, NOR Gate, Declaring wires |
+| 3 | Vectors | Vectors, Vectors in more detail, Bitwise operators, Vector concatenation operator|
+| 4 | Modules: Hierarchy | Modules, Three modules, Modules and vectors, Adder 1|
+| 5 | Procedures | All exercises besides the priority encoder exercises |
+| 6 | More Verilog Features | Conditional ternary operator |
+| 7 | Combinational Logic |  |
+| 8 | Sequential Logic |  |
+| 9 |  Finite State Machines | |
+
+<br>
+
+> HDLBits primarily teaches you the ``wire`` and ``reg`` signal types. For the onboarding project which is in SystemVerilog, you can use the ``logic`` data type in place of either instead.
+
+> In SystemVerilog, use ``always_comb`` instead of ``always`` for combinational logic. Similarly, use ``always_ff`` for sequential circuits to avoid confusion.
 
 ---
 
