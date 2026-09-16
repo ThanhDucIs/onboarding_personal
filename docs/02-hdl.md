@@ -40,7 +40,9 @@ You can access all the problems from [here](https://hdlbits.01xz.net/wiki/Proble
 
 ### Testbenches
 
-A **testbench** is code used to test and verify that your Verilog/SystemVerilog module works correctly. Unlike your actual design, the testbench is not synthesized into hardware.Instead, the testbench provides inputs to your module and checks its outputs.
+A **testbench** is code used to test and verify that your Verilog/SystemVerilog module works correctly. Unlike your actual design, the testbench is not synthesized into hardware.
+
+Instead, the testbench provides inputs to your module and checks its outputs.
 
 For example, if you created an AND gate:
 
@@ -104,12 +106,7 @@ Blocking vs. Non-Blocking Assignments
 
 There are two common types of assignments you will see in SystemVerilog:
 
-``=`` is a blocking assignment while ``<=`` is a non-blocking assignment.
-
-As a general rule:
-
-Use = for combinational logic
-Use <= for sequential logic
+Generally, ``=`` is a blocking assignment used for combinational logic while ``<=`` is a non-blocking assignment used for sequential logic.
 
 Blocking assignments happen in order. Each line can see the result of the line before it while non-blocking assignments calculate their new values first, then update them together.
 
