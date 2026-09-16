@@ -13,7 +13,7 @@ SystemVerilog is an extension of Verilog with extra features such as more data t
 
 ### How do I learn Verilog?
 
-To learn the basics of Verilog, you're recommended to check out [HDLBits](hdlbits.01xz.net) which provides over 150+ Verilog exercises to learning how to create an AND gate to shift registers. However, you won't need to go through all of the exercises there.
+To learn the basics of Verilog, you're recommended to check out [HDLBits](hdlbits.01xz.net) which provides over 150+ Verilog exercises from learning how to create an AND gate to shift registers. However, you won't need to go through all of the exercises there.
 We've highlighted some of the exercises that are going to be relevant for the onboarding projects.
 
 You can access all the problems from [here](https://hdlbits.01xz.net/wiki/Problem_sets).
@@ -26,9 +26,9 @@ You can access all the problems from [here](https://hdlbits.01xz.net/wiki/Proble
 | 4 | Modules: Hierarchy | Modules, Three modules, Modules and vectors, Adder 1|
 | 5 | Procedures | All exercises besides the priority encoder exercises |
 | 6 | More Verilog Features | Conditional ternary operator |
-| 7 | Combinational Logic |  |
-| 8 | Sequential Logic |  |
-| 9 |  Finite State Machines | |
+| 7 | Combinational Logic | Basic Gates, Multiplexers, Adders, Karnaugh Map exercises |
+| 8 | Sequential Logic | D Flip-Flops, Registers, Counters, Shift Registers |
+| 9 |  Finite State Machines | Simple FSM exercises and FSM design |
 
 <br>
 
@@ -40,6 +40,86 @@ You can access all the problems from [here](https://hdlbits.01xz.net/wiki/Proble
 
 ### Testbenches
 
+A **testbench** is code used to test and verify that your Verilog/SystemVerilog module works correctly. Unlike your actual design, the testbench is not synthesized into hardware.Instead, the testbench provides inputs to your module and checks its outputs.
 
+For example, if you created an AND gate:
 
+```systemverilog
+module and_gate (
+    input  logic a,
+    input  logic b,
+    output logic y
+);
 
+assign y = a & b;
+
+endmodule
+```
+
+A simple testbench could look like:
+
+```systemverilog
+module and_gate_tb;
+
+logic a;
+logic b;
+logic y;
+
+and_gate dut (
+    .a(a),
+    .b(b),
+    .y(y)
+);
+
+initial begin
+    a = 0;
+    b = 0;
+
+    #10;
+    a = 0;
+    b = 1;
+
+    #10;
+    a = 1;
+    b = 0;
+
+    #10;
+    a = 1;
+    b = 1;
+
+    #10;
+    $finish;
+end
+
+endmodule
+```
+
+The module being tested is commonly called the **DUT (Design Under Test)**. The `#10` tells the simulator to wait 10 units of simulation time before moving on to the next input. The `$finish` statement ends the simulation. For larger projects, testbenches can automatically check outputs instead of requiring you to manually look at waveforms.
+
+---
+
+### Non-blocking vs. blocking statements
+
+Blocking vs. Non-Blocking Assignments
+
+There are two common types of assignments you will see in SystemVerilog:
+
+``=`` is a blocking assignment while ``<=`` is a non-blocking assignment.
+
+As a general rule:
+
+Use = for combinational logic
+Use <= for sequential logic
+
+Blocking assignments happen in order. Each line can see the result of the line before it while non-blocking assignments calculate their new values first, then update them together.
+
+For example:
+
+```systemverilog
+always_ff @(posedge clk) begin
+    q1 <= data;
+    q2 <= q1;
+end
+```
+
+On the clock edge, ``q1`` receives data while ``q2`` receives the previous value of q1.
