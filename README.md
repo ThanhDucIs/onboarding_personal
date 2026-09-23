@@ -41,7 +41,7 @@ This is the full path from "just joined" to "contributing on a project team," in
 
 ## Step 1 — Get your environment working
 
-- [ ] Head to `01-tool-setup.md`
+- [ ] Head to `docs/01-tool-setup.md`
 - [ ] Set up Git + GitHub
 - [ ] Set up your OS environment (WSL2 on Windows, native on macOS/Linux)
 - [ ] Install Python 3, Verilator, cocotb, GTKWave 
@@ -49,27 +49,29 @@ This is the full path from "just joined" to "contributing on a project team," in
 
 ## Step 2 — Digital design fundamentals
 
-- [ ] Head to `02-digital-design-basics.md`
+- [ ] Head to `docs/02-digital-design-basics.md`
 
 ## Step 3 — Verilog / SystemVerilog basics
 
-- [ ] Head to `03-verilog-systemverilog.md`
+- [ ] Head to `docs/03-verilog-systemverilog.md`
 
 ## Step 4 — Verification basics
 
-- [ ] Head to `04-verification-basics.md`
+- [ ] Head to `docs/04-verification-basics.md`
 
 ## Step 5 - RTL-to-GDS ()
 
-- [ ] Head to `05-rtl-to-gds.md`
+- [ ] Head to `docs/05-rtl-to-gds.md`
 
 ## Step 6 - Instruction Set Architecture (ISA)
 
-- [ ] Head to `06-isa.md`
+- [ ] Head to `docs/06-isa.md`
 
 ## Step 7 —  ALU & Synchrnous FIFO & UART Projects
 
-- Each of these projects has a seperate folder
+- [ ] ALU Project: Head to `alu/`
+- [ ] Synchrnous FIFO Project: Head to `sync_fifo/`
+- [ ] UART Transmitter Project: Head to `uart_transmitter/`
 
 ## Step 8 — Join a project team
 
