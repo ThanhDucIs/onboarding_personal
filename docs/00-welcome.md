@@ -11,7 +11,7 @@ ASICWRU takes designs from concept through physical layout to actual silicon. Th
 - **Verification** — proving that logic is correct before it's trusted with silicon
 - **Physical design** — synthesis, timing analysis, and place-and-route that turn verified RTL into a real, fabricable layout
 
-We use open-source tools end to end — Verilator (simulation), cocotb(verification), Yosys (synthesis), OpenSTA (static timing analysis), OpenROAD (place-and-route), Magic and Netgen (layout and verification). esigns target open silicon processes (SkyWater 130nm and IHP 130nm) through the Tiny Tapeout program, which is how a student team gets an actual chip fabricated without a corporate budget.
+We use use open source tools for the entire design flow. Verilator (simulation), cocotb(verification), Yosys (synthesis), OpenSTA (static timing analysis), OpenROAD (place-and-route), Magic and Netgen (layout and verification). esigns target open silicon processes (SkyWater 130nm and IHP 130nm) through the Tiny Tapeout program, which is how a student team gets an actual chip fabricated without a corporate budget.
 
 In the future we will work to get our hands on EDA tool, but for now, this open source tool set has everything you need to complete the onboarding process.
 
