@@ -1,6 +1,5 @@
-# What is ASICWRU?
+# Welcome to ASICWRU!
 
-Welcome to ASICWRU!
 We are Case Western Reserve University's student-led silicon design team. This document can take you from zero experience with RTL, verification, or physical design work to designing a real chip that gets submitted for tapeout.
 
 ## What we actually do
