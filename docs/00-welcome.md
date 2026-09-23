@@ -34,11 +34,9 @@ The team runs **weekly GB meetings** to go over the current state of the club. T
 - **Discord:** `#onboarding-channel` — post here first when you're stuck on anything 
 
 
-# WHere to Start: Onboarding Roadmap
+# Where to Start: Onboarding Roadmap
 
 This is the full path from "just joined" to "contributing on a project team," in order. Estimates assume a few hours a week around classes, plus showing up to weekly sessions
-
-Stuck anywhere on this list? Post in `#onboarding-channel` on Discord
 
 ---
 
