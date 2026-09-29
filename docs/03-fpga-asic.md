@@ -22,9 +22,9 @@ The design must be checked carefully before fabrication because changing it afte
 
 | | FPGA | ASIC |
 | --- | --- | --- |
-| Changing the design | Load a new bitstream | Requires a new chip to be manufactured |
-| Getting hardware | Use an existing FPGA board | Fabricate the design |
-| Main advantage | Faster to test and revise | Can be optimized for the design's area, speed, and power |
+| Changing the design | Load a new bitstream | No, the design is hardwired on silucon  |
+| Getting hardware | Obtain an FPGA from a vendor | Fabricate the design through a foundry (TSMC, Samsung, etc.) |
+| Main advantage | Reprogrammability, faster to test and revise | Can be optimized for the design's area, speed, and power and cheaper when manufactured in higher volume |
 
 Both can start with RTL written in an HDL, but they have different implementation flows. On an FPGA, the tools map your design to the chip's existing programmable resources. For an ASIC, the tools turn your design into a layout of cells and wires that can be manufactured and taped out by a foundry. In ASICWRU, we'll be using FPGAs for prototyping and early demonstrations, and then submitting our designs to Tiny Tapeout once our design is fully verified to be functional and meets our set standards.
 
@@ -32,7 +32,7 @@ Both can start with RTL written in an HDL, but they have different implementatio
 
 ### What is Tiny Tapeout?
 
-[**Tiny Tapeout**](https://tinytapeout.com/) is an initiative that lets students and hobbyists submit small designs to be fabricated on actual silicon through open-source tools and without spending millions of dollars. This makes it possible to go through a real chip-design process with a small project. Multiple projects share space on one chip, with each project occupying a small area called a tile. A tile can contain roughly fit ~1,000 logic gates, and this depends on which Process Development Kit (PDK) you're using. Tiny Tapeout mainly has shuttles of different PDKs where you can submit your design. 
+[Tiny Tapeout](https://tinytapeout.com/) is an initiative that lets students and hobbyists submit small designs to be fabricated on actual silicon through open-source tools and without spending millions of dollars. This makes it possible to go through a real chip-design process with a small project. Multiple projects share space on one chip, with each project occupying a small area called a tile. A tile can contain roughly fit ~1,000 logic gates, and this depends on which Process Development Kit (PDK) you're using. Tiny Tapeout mainly has shuttles of different PDKs where you can submit your design. 
 
 For a digital project, you can write your RTL, simulate and test it, then Tiny Tapeout uses the OpenLane flow to automate the process of turning the design into a physical layout for fabrication. After the chip is manufactured, you can test how your circuit behaves in silicon.
 
