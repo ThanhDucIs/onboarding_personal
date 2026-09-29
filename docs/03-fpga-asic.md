@@ -34,6 +34,6 @@ Both can start with RTL written in an HDL, but they have different implementatio
 
 [Tiny Tapeout](https://tinytapeout.com/) is an initiative that lets students and hobbyists submit small designs to be fabricated on actual silicon through open-source tools and without spending millions of dollars. This makes it possible to go through a real chip-design process with a small project. Multiple projects share space on one chip, with each project occupying a small area called a tile. A tile can contain roughly fit ~1,000 logic gates, and this depends on which Process Development Kit (PDK) you're using. Tiny Tapeout mainly has shuttles of different PDKs where you can submit your design. 
 
-For a digital project, you can write your RTL, simulate and test it, then Tiny Tapeout uses the OpenLane flow to automate the process of turning the design into a physical layout for fabrication. After the chip is manufactured, you can test how your circuit behaves in silicon.
+For a project, you can write your RTL, simulate and test it, then Tiny Tapeout uses the OpenLane flow to automate the process of turning the design into a physical layout for fabrication. After the chip is manufactured, you can test how your circuit behaves in silicon.
 
 For more detail, see Tiny Tapeout's [Making ASICs](https://tinytapeout.com/making_asics/) and [FPGA to ASIC](https://tinytapeout.com/hdl/fpga_vs_asic/) pages.

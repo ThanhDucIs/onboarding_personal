@@ -1,7 +1,5 @@
 # Introduction to Instruction Set Architectures (ISA)
 
-### What is an instruction set architecture?
-
 An **instruction set architecture (ISA)** defines the instructions a processor understands and what each instruction does. It also defines things such as the registers available to a program and how instructions are represented in binary.
 
 For example, an ISA might define an `add` instruction that reads two registers and writes their sum to a third register. The ISA tells us what the instruction must do, while the processor designer decides how to build the hardware that carries it out.

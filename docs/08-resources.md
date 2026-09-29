@@ -10,7 +10,7 @@ These are all additional resources you can look at to supplement your learning. 
 
 [HDLBits](hdlbits.01xz.net) - 180+ problem exercises to help you learn the syntax and basics of Verilog.
 
-[
+[cocotb](https://docs.cocotb.org/en/stable/) - documentation, tutorials, and guides on cocotb for verification
 
 ### Repositories
 
@@ -22,3 +22,5 @@ These are all additional resources you can look at to supplement your learning. 
 [CoreDumped](https://www.youtube.com/@CoreDumpped) - Has a good and short playlist on computer architecture
 
 [Onor Mutlu's Lectures](https://www.youtube.com/playlist?app=desktop&list=PL5Q2soXY2Zi9Eo29LMgKVcaydS7V1zZW3) - Goes more into digital design and computer architecture, covers all the way from fundamentals up to advanced processor design
+
+### Textbooks / PDFs
