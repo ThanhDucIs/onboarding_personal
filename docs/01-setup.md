@@ -4,9 +4,13 @@
 
 1. Install [Git](https://git-scm.com/download/win) or from your CLI by executing ``winget install --id Git.Git``
 2. Install [Visual Studio Code](https://code.visualstudio.com/download) on your computer. (If you have an editor of preference that's also fine)
+3.
+4.
+5.
+6.
 3. Go to the left sidebar and look for Extensions (Ctrl+Shift+X) button and look for the **Verilog-HDL/SystemVerilog** extension then install
 4. Create a folder on your computer where you want your club related work (including onboarding) to be stored
-5. In that folder, open a terminal in VS Code and lone this repository by typing `git clone https://github.com/asicwru/asicwru-onboarding.git`
+5. In that folder, open a terminal in VS Code and clone this repository by typing `git clone https://github.com/asicwru/asicwru-onboarding.git`
 
 ## Mac
 
@@ -14,7 +18,7 @@
 2. Install [Visual Studio Code](https://code.visualstudio.com/download) on your computer.
 3. Go to the left sidebar and look for Extensions (Ctrl+Shift+X) button and look for the **Verilog-HDL/SystemVerilog** extension then install
 4. Create a folder on your computer where you want your club related work (including onboarding) to be stored
-5. In that folder, open a terminal in VS Code and lone this repository by typing `git clone https://github.com/asicwru/asicwru-onboarding.git`
+5. In that folder, open a terminal in VS Code and clone this repository by typing `git clone https://github.com/asicwru/asicwru-onboarding.git`
 
 ## Linux
 
@@ -22,7 +26,7 @@
 2. Install [Visual Studio Code](https://code.visualstudio.com/download) on your computer. (If you have an editor of preference that's also fine)
 3. Go to the left sidebar and look for Extensions (Ctrl+Shift+X) button and look for the **Verilog-HDL/SystemVerilog** extension then install
 4. Create a folder on your computer where you want your club related work (including onboarding) to be stored
-5. In that folder, open a terminal in VS Code and lone this repository by typing `git clone https://github.com/asicwru/asicwru-onboarding.git`
+5. In that folder, open a terminal in VS Code and clone this repository by typing `git clone https://github.com/asicwru/asicwru-onboarding.git`
 
 > [!Note]
 > **Turn off Copilot's in line code suggestions!**
