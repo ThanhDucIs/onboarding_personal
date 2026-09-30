@@ -1,6 +1,6 @@
 # Welcome to ASICWRU!
 
-We are Case Western Reserve University's student-led silicon design team. This document can take you from zero experience with RTL, verification, or physical design work to designing a real chip that gets submitted for tapeout.
+We are Case Western Reserve University's student-led silicon design team. This repository can take you from zero experience with RTL, verification, or physical design work to being ready to contribute to a real chip that gets submitted for tapeout.
 
 ## What we actually do
 
@@ -10,11 +10,11 @@ ASICWRU takes designs from concept through physical layout to actual silicon. Th
 - **Verification** — proving that logic is correct before it's trusted with silicon
 - **Physical design** — synthesis, timing analysis, and place-and-route that turn verified RTL into a real, fabricable layout
 
-We use use open source tools for the entire design flow. Verilator (simulation), cocotb(verification), Yosys (synthesis), OpenSTA (static timing analysis), OpenROAD (place-and-route), Magic and Netgen (layout and verification). esigns target open silicon processes (SkyWater 130nm and IHP 130nm) through the Tiny Tapeout program, which is how a student team gets an actual chip fabricated without a corporate budget.
+We use open-source tools for the entire design flow: Verilator (simulation), cocotb (verification), Yosys (synthesis), OpenSTA (static timing analysis), OpenROAD (place-and-route), and Magic and Netgen (layout and verification). Designs target open silicon processes (SkyWater 130nm and IHP 130nm) through the Tiny Tapeout program, which is how a student team gets an actual chip fabricated without a corporate budget.
 
-In the future we will work to get our hands on EDA tool, but for now, this open source tool set has everything you need to complete the onboarding process.
+In the future we will work to get our hands on commercial EDA tools, but for now, this open-source tool set has everything you need to complete the onboarding process.
 
-**No prior tapeout or chip-design experience is required to join.** The entire point of this onboarding path is built to take someone from zero to strong enough to contribute to a real project.
+**No prior tapeout or chip-design experience is required to join.** This onboarding path is built to take someone from zero to strong enough to contribute to a real project.
 
 ## What we've built
 
@@ -26,25 +26,26 @@ These are the chips this team is going to tape out. Onboarding exists so you can
 
 ## Weekly General Body Meetings
 
-The team runs **weekly GB meetings** to go over the current state of the club. These meetings will also be times to ask any questions / get extra help withthe onboarding process. It will acts as an offie hour. Current memebers can help cover digital design and SystemVerilog fundamentals Showing up to these consistently is the fastest way through onboarding.
+The team runs **weekly GB meetings** to go over the current state of the club. These meetings are also a time to ask questions and get extra help with the onboarding process; think of them as office hours. Current members can help cover digital design and SystemVerilog fundamentals. Showing up consistently is the fastest way through onboarding.
 
 ## Where to get help outside of meetings
 
-- **Discord:** `#onboarding-channel` — post here first when you're stuck on anything 
+- **Discord:** `#onboarding-channel` — post here first when you're stuck on anything. Include what you ran, what you expected, and the exact error text.
 
+---
 
 # Where to Start: Onboarding Roadmap
 
-This is the full path from "just joined" to "contributing on a project team," in order. Estimates assume a few hours a week around classes, plus showing up to weekly sessions
+This is the full path from "just joined" to "contributing on a project team," in order. Estimates assume a few hours a week around classes, plus showing up to weekly sessions.
 
 ---
 
 ## Step 1 — Get your environment working
 
-- [ ] Head to `docs/01-tool-setup.md`
-- [ ] Set up Git + GitHub
+- [ ] Head to `docs/01-setup.md`
 - [ ] Set up your OS environment (WSL2 on Windows, native on macOS/Linux)
-- [ ] Install Python 3, Verilator, cocotb, GTKWave 
+- [ ] Install Verilator (5.036 or newer), Python 3, cocotb, GTKWave
+- [ ] Set up Git + GitHub and fork this repository
 - [ ] Set up your editor (VS Code + SystemVerilog extension)
 
 ## Step 2 — Digital design fundamentals
@@ -53,26 +54,34 @@ This is the full path from "just joined" to "contributing on a project team," in
 
 ## Step 3 — Verilog / SystemVerilog basics
 
-- [ ] Head to `docs/03-verilog-systemverilog.md`
+- [ ] Head to `docs/03-hdl.md`
 
 ## Step 4 — Verification basics
 
 - [ ] Head to `docs/04-verification-basics.md`
 
-## Step 5 - RTL-to-GDS ()
+## Step 5 — FPGAs, ASICs, and Tiny Tapeout
 
-- [ ] Head to `docs/05-rtl-to-gds.md`
+- [ ] Head to `docs/05-fpga-asic.md`
 
-## Step 6 - Instruction Set Architecture (ISA)
+## Step 6 — RTL-to-GDS
 
-- [ ] Head to `docs/06-isa.md`
+- [ ] Head to `docs/06-rtl-to-gds.md`
 
-## Step 7 —  ALU & Synchrnous FIFO & UART Projects
+## Step 7 — Instruction Set Architecture (ISA)
 
-- [ ] ALU Project: Head to `alu/`
-- [ ] Synchrnous FIFO Project: Head to `sync_fifo/`
-- [ ] UART Transmitter Project: Head to `uart_transmitter/`
+- [ ] Head to `docs/07-isa.md`
 
-## Step 8 — Join a project team
+## Step 8 — ALU, Synchronous FIFO, and UART projects
 
-- Get in touch with a team lead in discord or at a meeting
+Read `docs/08-onboarding-modules.md`, then do the projects in this order:
+
+- [ ] ALU Project: head to `alu/`
+- [ ] Synchronous FIFO Project: head to `sync_fifo/`
+- [ ] UART Transmitter Project: head to `uart_transmitter/`
+
+## Step 9 — Join a project team
+
+- Get in touch with a team lead in Discord or at a meeting
+
+Extra reading and videos: `docs/09-resources.md`.

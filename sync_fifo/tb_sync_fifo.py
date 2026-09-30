@@ -1,5 +1,0 @@
-module fifo (
-
-);
-
-endmodule;

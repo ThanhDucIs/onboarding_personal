@@ -1,0 +1,12 @@
+# Build artifacts. NOTE: *.vcd files are deliberately NOT ignored - the submission requires them.
+sim_build/
+obj_dir/
+__pycache__/
+*.pyc
+results.xml
+.venv/
+venv/
+*.fst
+
+# Synthesis outputs from docs/06-rtl-to-gds.md
+flow/out/

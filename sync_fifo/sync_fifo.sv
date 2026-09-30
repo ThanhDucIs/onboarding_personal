@@ -1,51 +1,63 @@
+// Synchronous FIFO -- see sync_fifo/README.md for the full behavioral spec.
+//
+// Ports and parameter names are fixed: the cocotb testbench and CI use them.
 module sync_fifo #(
-  parameter DEPTH  = 8,    // number of slots
-  parameter DWIDTH = 16    // bits per word
+    parameter int DEPTH  = 8,    // number of words stored; must be a power of two
+    parameter int DWIDTH = 16    // bits per word
 ) (
-  input  logic clk,
-  input  logic rst_n,    // active-low reset
-  input  logic wr_en,
-  input  logic rd_en,
-  input  logic [DWIDTH-1:0] din,
-  output logic [DWIDTH-1:0] dout,
-  output logic empty,
-  output logic full
+    input  logic              clk,
+    input  logic              rst_n,    // synchronous, active-low reset
+    input  logic              wr_en,
+    input  logic              rd_en,
+    input  logic [DWIDTH-1:0] din,
+    output logic [DWIDTH-1:0] dout,
+    output logic              empty,
+    output logic              full
 );
- 
+
+    localparam int AW = $clog2(DEPTH);   // address bits: which of the DEPTH slots
+
     // Storage: DEPTH words, each DWIDTH bits wide
-    logic [DWIDTH-1:0] fifo [DEPTH];
- 
-    // Pointers into the storage array.
-    // wptr = where the next write goes, rptr = where the next read comes from
-    logic [$clog2(DEPTH)-1:0] wptr, rptr;
- 
+    logic [DWIDTH-1:0] mem [DEPTH];
 
-    // Write logic
+    // Pointers have ONE MORE BIT than the address needs. The low AW bits pick the slot
+    // (wptr[AW-1:0], rptr[AW-1:0]); the top bit flips each time the pointer wraps past the
+    // end. That extra "lap" bit is what lets us tell full from empty:
+    //   empty: pointers identical                    (same slot, same lap)
+    //   full:  same slot but different lap bits      (writer is one whole lap ahead)
+    logic [AW:0] wptr, rptr;
 
+    // TODO: drive `empty` from wptr and rptr.
+    assign empty = 1'b1;
+
+    // TODO: drive `full` from wptr and rptr (see the comment above).
+    assign full = 1'b0;
+
+    // A write happens only if requested AND there is room; a read only if requested AND
+    // there is data. Requests made when full/empty are silently ignored.
+    // TODO: define do_write and do_read from wr_en, rd_en, full, empty.
+    logic do_write, do_read;
+    assign do_write = 1'b0;
+    assign do_read  = 1'b0;
+
+    // Write side
     always_ff @(posedge clk) begin
         if (!rst_n) begin
             wptr <= '0;
-        end else begin
-            // TODO: if wr_en is high and the FIFO is not full,
-            // store din at fifo[wptr] and increment wptr
+        end else if (do_write) begin
+            // TODO: store din in mem at the slot wptr points to, then advance wptr
         end
     end
 
-    // Read logic
-
+    // Read side. dout is REGISTERED: after an accepted read, the word appears on dout
+    // one clock edge later (the edge that accepts the read). dout holds its value otherwise.
     always_ff @(posedge clk) begin
         if (!rst_n) begin
             rptr <= '0;
             dout <= '0;
-        end else begin
-        // TODO: if rd_en is high and the FIFO is not empty,
-        //       put fifo[rptr] on dout and increment rptr
+        end else if (do_read) begin
+            // TODO: load dout from mem at the slot rptr points to, then advance rptr
         end
     end
 
-  // Status flags
-  // TODO: empty is 1 when the two pointers are equal
-  // TODO: full is 1 when the NEXT write would make the pointers equal
-  // (hint: compare wptr + 1'b1 with rptr. Use 1'b1, not 1 — a plain 1 is 32 bits wide, so the sum won't wrap back to 0 like the pointer does)
- 
 endmodule

@@ -2,9 +2,9 @@
 
 ### What is an FPGA?
 
-A field-programmable gate array (FPGA) is a chip whose digital logic can be reconfigured after it is manufactured. You can write a design in Verilog or SystemVerilog, compile it into a bitstream, and load that bitstream onto the FPGA. If you need to change your circuit, you can update the design and load a new bitstream. An FPGA is useful for its flexibility, allowing you to prototype and debug much quickly.
+A field-programmable gate array (FPGA) is a chip whose digital logic can be reconfigured after it is manufactured. You can write a design in Verilog or SystemVerilog, compile it into a bitstream, and load that bitstream onto the FPGA. If you need to change your circuit, you can update the design and load a new bitstream. An FPGA is useful for its flexibility, allowing you to prototype and debug much more quickly.
 
-There are two leading FPGA vendors: AMD (Xilinx) and Intel (Altera) and each company has different suite of tools that you must use if you're working with their hardware.
+There are two leading FPGA vendors: AMD (Xilinx) and Intel (Altera) and each company has a different suite of tools that you must use if you're working with their hardware.
 
 ---
 
@@ -22,7 +22,7 @@ The design must be checked carefully before fabrication because changing it afte
 
 | | FPGA | ASIC |
 | --- | --- | --- |
-| Changing the design | Load a new bitstream | No, the design is hardwired on silucon  |
+| Changing the design | Load a new bitstream | No, the design is hardwired on silicon  |
 | Getting hardware | Obtain an FPGA from a vendor | Fabricate the design through a foundry (TSMC, Samsung, etc.) |
 | Main advantage | Reprogrammability, faster to test and revise | Can be optimized for the design's area, speed, and power and cheaper when manufactured in higher volume |
 
