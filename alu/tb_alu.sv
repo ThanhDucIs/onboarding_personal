@@ -20,10 +20,10 @@ The widths below assume the port widths described in alu.sv (two 32-bit operands
 a 32-bit result). If you changed any of those widths, update these to match.
 */
  
-logic [31:0] tb_input1;
-logic [31:0] tb_input2;
+logic [32:0] tb_input1;
+logic [32:0] tb_input2;
 logic [3:0]  tb_opcode;
-logic [31:0] tb_result;
+logic [32:0] tb_result;
  
 /*
 DUT stands for "Design Under Test", the module actually being tested, as opposed to the testbench
@@ -39,16 +39,25 @@ safety nets, so don't use it here.
 */
  
 alu DUT (
- 
+    .input1(tb_input1),
+    .input2(tb_input2),
+    .opcode(tb_opcode),
+    .result(tb_result)
 );
  
-/*
-Copy the localparams from alu.sv here so the stimulus below can refer to operations by name (ADD,
-SUB, ...) instead of by raw 4-bit values. This list should be identical to the one in your alu.sv --
-if it drifts out of sync, the testbench will be checking the wrong opcode against the wrong result.
-*/
  
 localparam ADD = 4'h0;
+localparam SUB = 4'h1;
+localparam AND = 4'h2;
+localparam OR  = 4'h3;
+localparam XOR = 4'h4;
+localparam NOT = 4'h5;
+localparam SLL = 4'h6;
+localparam SRL = 4'h7;
+localparam SLT = 4'h8;
+localparam EQ  = 4'h9;
+
+
  
 /*
 This task applies one test case: it drives both operands and the opcode onto the DUT, waits for the
@@ -66,9 +75,9 @@ Lastly, fill in a default branch for "expected", for the same reason alu.sv need
 so the check always has a defined value to compare against, even for an opcode you haven't handled.
 */
  
-task automatic check_op(input logic [31:0] a, input logic [31:0] b, input logic [3:0] op,
+task automatic check_op(input logic [32:0] a, input logic [32:0] b, input logic [3:0] op,
                          input string op_name);
-    logic [31:0] expected;
+    logic [32:0] expected;
  
     tb_input1 = a;
     tb_input2 = b;
@@ -77,17 +86,17 @@ task automatic check_op(input logic [31:0] a, input logic [31:0] b, input logic 
  
     case (op)
         ADD: expected = a + b;
-        // SUB: expected =
-        // AND: expected =
-        // OR:  expected =
-        // XOR: expected =
-        // NOT: expected =        // NOT only uses one operand which one is up to you, but be
+        SUB: expected = a - b;
+        AND: expected = a & bl
+        OR:  expected = a | b;
+        XOR: expected = a ^ b;
+        NOT: expected = ~b;       // NOT only uses one operand which one is up to you, but be
                                   // consistent with whichever one your always_comb block uses
-        // SLL: expected =
-        // SRL: expected =
-        // SLT: expected =        // result should read back as 1 or 0
-        // EQ:  expected =        // result should read back as 1 or 0
-        default:
+        SLL: expected = a << 1;
+        SRL: expected = a >> 1;
+        SLT: expected = a < b;      // result should read back as 1 or 0
+        EQ:  expected = a = b;       // result should read back as 1 or 0
+        default: expected = 33'h00000000;
     endcase
  
     if (tb_result === expected)
@@ -106,7 +115,19 @@ SUB should include a case where the result would go negative if your ALU treats 
  
 initial begin
     check_op(32'd10, 32'd20, ADD, "ADD");
- 
+    check_op(32'd20, 32'd10, SUB, "SUB");
+    check_op(32'd10, 32'd20, SUB, "SUB");
+    check_op(32'd20, 32'd10, AND, "AND");
+    check_op(32'd20, 32'd10, OR, "OR");
+    check_op(32'd20, 32'd20, OR, "OR");
+    check_op(32'd10, 32'd20, OR, "OR");
+    check_op(32'd20,         NOT, "NOT");
+    check_op(32'd10,         SLL, "SLL");
+    check_op(32'd10,         SRL, "SRL");
+    check_op(32'd20, 32'd10, SLT, "SLT");
+    check_op(32'd20, 32'd10, EQ, "EQ");
+    check_op(32'd20, 32'd20, EQ, "EQ");
+
     $finish;
 end
  

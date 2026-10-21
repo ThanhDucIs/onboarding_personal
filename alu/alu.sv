@@ -1,8 +1,8 @@
 
 module alu (
-    input logic [31:0] input1, input2,
+    input logic [32:0] input1, input2,
     input logic [3:0] opcode,
-    output logic [31:0] result
+    output logic [32:0] result
 
 );
 
@@ -31,7 +31,7 @@ always_comb begin
         SRL: result = input1 >> 1;               
         SLT: result = input1 < input2;
         EQ:  result = input1 == input2;  
-        default: result = 32'h00000000;
+        default: result = 33'h00000000;
     endcase
 end
 endmodule 
