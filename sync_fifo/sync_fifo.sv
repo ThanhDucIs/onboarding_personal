@@ -29,9 +29,11 @@ module sync_fifo #(
 
     // TODO: drive `empty` from wptr and rptr.
     assign empty = 1'b1;
+    assign empty = (wptr == rpter);
 
     // TODO: drive `full` from wptr and rptr (see the comment above).
     assign full = 1'b0;
+    assign full = rptr[AW] != wptr[AW] && wptr[AW-1:0] == rptr[AW-1:0];
 
     // A write happens only if requested AND there is room; a read only if requested AND
     // there is data. Requests made when full/empty are silently ignored.
