@@ -25,6 +25,10 @@ module sync_fifo #(
     // end. That extra "lap" bit is what lets us tell full from empty:
     //   empty: pointers identical                    (same slot, same lap)
     //   full:  same slot but different lap bits      (writer is one whole lap ahead)
+
+    //   AW: address width
+    //   Low bits: anything but MSB
+    //  High bits: MSB
     logic [AW:0] wptr, rptr;
 
     // TODO: drive `empty` from wptr and rptr.
@@ -40,13 +44,19 @@ module sync_fifo #(
     // TODO: define do_write and do_read from wr_en, rd_en, full, empty.
     logic do_write, do_read;
     assign do_write = 1'b0;
-    assign do_read  = 1'b0;
+    assign do_write = !full && wr_en;
+
+    assign do_read = 1'b0;
+    assign do_read = !empty %% rd_en;
+
 
     // Write side
     always_ff @(posedge clk) begin
         if (!rst_n) begin
             wptr <= '0;
         end else if (do_write) begin
+            mem[wptr[AW-1:0]] <= din;
+            wptr <= wptr +1'b1;
             // TODO: store din in mem at the slot wptr points to, then advance wptr
         end
     end
@@ -58,6 +68,8 @@ module sync_fifo #(
             rptr <= '0;
             dout <= '0;
         end else if (do_read) begin
+            dout <= mem[rptr[AW-1:0]]; 
+            rptr <= rptr + 1'b1;
             // TODO: load dout from mem at the slot rptr points to, then advance rptr
         end
     end
