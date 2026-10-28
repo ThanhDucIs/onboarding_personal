@@ -122,6 +122,7 @@ async def test_fill_to_full(dut):
     assert False, "TODO: implement test_fill_to_full"
 
 
+
 @cocotb.test()
 async def test_write_when_full_is_ignored(dut):
     """TODO: fill the FIFO, attempt extra writes, then read everything back.
@@ -156,3 +157,5 @@ async def test_random_traffic(dut):
     do the verifying. Use random.Random(seed) with a fixed seed so a failure is reproducible,
     and print the seed in your assertion messages if you make it configurable."""
     assert False, "TODO: implement test_random_traffic"
+
+

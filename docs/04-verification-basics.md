@@ -89,7 +89,8 @@ async def test_counts_when_enabled(dut):
             expected = (expected + 1) % 16  # model: 4-bit wraparound
         assert dut.count.value == expected, f"cycle {cycle}: count={dut.count.value}, expected {expected}"
 ```
-
+ line 88 if en means for cases en is true:
+ 
 Things to know:
 
 - `@cocotb.test()` marks an `async` function as a test case; a testbench file can (and should) have several
